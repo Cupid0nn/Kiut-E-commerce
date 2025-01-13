@@ -1,7 +1,7 @@
 import { Entity, PrimaryGeneratedColumn, Column } from 'typeorm';
 
 @Entity()
-export class Prenda {
+export class Clothes {
     @PrimaryGeneratedColumn('uuid')
     id: string;
 
