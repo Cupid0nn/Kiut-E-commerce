@@ -1,7 +1,7 @@
 import { Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { Clothes } from 'src/entityes/Clothesentity';
-import { ClothesController } from './ropa.controller';
+import { ClothesController } from './Clothes.controller';
 import { ClothesService } from './Clothes.service';
 import { ClothesRepository } from './Clothes.repository';
 
