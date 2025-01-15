@@ -35,4 +35,5 @@ Este es un proyecto personal para realizar un E-commerce en forma de revista sin
 
 ## 🎯 Objetivo
 
+
 Este proyecto tiene como objetivo ofrecer una experiencia de usuario fluida y práctica, sirviendo como un catálogo interactivo en línea que facilita la conexión entre el cliente y la empresa sin necesidad de una pasarela de pagos.
