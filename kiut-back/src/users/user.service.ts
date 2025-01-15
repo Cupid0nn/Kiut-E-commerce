@@ -34,6 +34,20 @@ export class UserService {
     }
 
     /**
+     * Recupera un usuario por su correo electrónico.
+     * @param email - El correo electrónico del usuario a recuperar.
+     * @returns Una promesa que resuelve al usuario.
+     */
+    async findByEmail(email: string): Promise<User> {
+        try {
+            return await this.userRepository.findByEmail(email);
+        } catch (error) {
+            // Manejar errores aquí
+            throw new Error(`Error al encontrar el usuario con correo electrónico ${email}: ${error.message}`);
+        }
+    }
+
+    /**
      * Crea un nuevo usuario.
      * @param user - El usuario a crear.
      * @returns Una promesa que resuelve al usuario creado.
