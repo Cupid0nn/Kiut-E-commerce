@@ -6,32 +6,32 @@ import { Clothes } from 'src/entityes/clothesentity';
 export class ClothesController {
     constructor(private readonly clothesService: ClothesService) {}
 
-    @Get()
+    @Get()// Proteger con Admin Y SuperAdmin
     async findAll(): Promise<Clothes[]> {
         return this.clothesService.findAll();
     }
 
-    @Get(':id')
+    @Get(':id')// Proteger con Admin Y SuperAdmin
     async findOne(@Param('id') id: string): Promise<Clothes> {
         return this.clothesService.findOne(id);
     }
 
-    @Post()
+    @Post()// Proteger con Admin Y SuperAdmin
     async create(@Body() clothes: Clothes): Promise<Clothes> {
         return this.clothesService.create(clothes);
     }
 
-    @Put(':id')
+    @Put(':id')// Proteger con Admin Y SuperAdmin
     async update(@Param('id') id: string, @Body() clothes: Clothes): Promise<Clothes> {
         return this.clothesService.update(id, clothes);
     }
 
-    @Delete(':id')
+    @Delete(':id')// Proteger con Admin Y SuperAdmin
     async delete(@Param('id') id: string): Promise<void> {
         return this.clothesService.delete(id);
     }
 
-    @Get('name/:name')
+    @Get('name/:name')// Proteger con Admin Y SuperAdmin
     async findByName(@Param('name') name: string): Promise<Clothes[]> {
         return this.clothesService.findByName(name);
     }
