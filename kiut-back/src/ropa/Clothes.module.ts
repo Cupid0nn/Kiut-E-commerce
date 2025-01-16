@@ -1,13 +1,14 @@
 import { Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
-import { Clothes } from 'src/entityes/Clothesentity';
-import { ClothesController } from './Clothes.controller';
-import { ClothesService } from './Clothes.service';
-import { ClothesRepository } from './Clothes.repository';
+import { Clothes } from 'src/entityes/clothesentity';
+import { ClothesService } from './clothes.service';
+import { ClothesRepository } from './clothes.repository';
+import { ClothesController } from './clothes.controller';
 
 @Module({
-    imports: [TypeOrmModule.forFeature([Clothes])],
-    controllers: [ClothesController],
-    providers: [ClothesService, ClothesRepository],
+  imports: [TypeOrmModule.forFeature([Clothes])],
+  providers: [ClothesService, ClothesRepository],
+  controllers: [ClothesController],
+  exports: [ClothesService],
 })
 export class ClothesModule {}

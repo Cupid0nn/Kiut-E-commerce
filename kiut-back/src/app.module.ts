@@ -1,6 +1,10 @@
 import { Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { ConfigModule } from '@nestjs/config';
+import { User } from 'src/entityes/userentity';
+import { Clothes } from 'src/entityes/clothesentity';
+import { UserModule } from './users/user.module';
+import { ClothesModule } from './ropa/Clothes.module';
 
 @Module({
   imports: [
@@ -19,6 +23,8 @@ import { ConfigModule } from '@nestjs/config';
       autoLoadEntities: true,
       dropSchema: true,
     }),
+    UserModule,
+    ClothesModule
   ],
 })
 export class AppModule {}

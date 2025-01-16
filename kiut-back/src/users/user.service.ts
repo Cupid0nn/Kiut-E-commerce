@@ -10,7 +10,7 @@ export class UserService {
      * Recupera todos los usuarios.
      * @returns Una promesa que resuelve a un array de usuarios.
      */
-    async findAll(): Promise<User[]> {
+    async findAll() {
         try {
             return await this.userRepository.findAll();
         } catch (error) {
@@ -52,7 +52,7 @@ export class UserService {
      * @param user - El usuario a crear.
      * @returns Una promesa que resuelve al usuario creado.
      */
-    async create(user: User): Promise<User> {
+    async create(user: User): Promise<Partial<User>> {
         try {
             return await this.userRepository.create(user);
         } catch (error) {
@@ -81,9 +81,10 @@ export class UserService {
      * @param id - El ID del usuario a eliminar.
      * @returns Una promesa que se resuelve cuando el usuario es eliminado.
      */
-    async delete(id: string): Promise<void> {
+    async delete(id: string): Promise<string> {
         try {
             await this.userRepository.delete(id);
+            return 'Usuario eliminado con éxito'; // or some other string value
         } catch (error) {
             // Manejar errores aquí
             throw new Error(`Error al eliminar el usuario con ID ${id}: ${error.message}`);
