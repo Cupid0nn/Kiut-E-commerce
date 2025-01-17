@@ -63,9 +63,10 @@ export class ClothesService {
      * @param id - El ID de la prenda a eliminar.
      * @returns Una promesa que se resuelve cuando la prenda de ropa es eliminada.
      */
-    async delete(id: string): Promise<void> {
+    async delete(id: string): Promise<string> {
         try {
             await this.clothesRepository.delete(id);
+            return "prenda borrada con exito"
         } catch (error) {
             throw new Error(`Error al eliminar la prenda con ID ${id}: ${error.message}`);
         }

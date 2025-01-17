@@ -25,8 +25,9 @@ export class ClothesRepository {
     return this.clothesRepository.findOne({ where: { id } });
   }
 
-  async delete(id: string): Promise<void> {
+  async delete(id: string): Promise<string> {
     await this.clothesRepository.delete(id);
+    return "prenda borrada con exito"
   }
 
   async findByName(name: string): Promise<Clothes[]> {

@@ -32,7 +32,13 @@ export class UserController {
     }
 
     @Delete(':id') // Proteger con Admin Y SuperAdmin
-    async delete(@Param('id') id: string): Promise<string> {
-        return this.userService.delete(id);
+    async delete(@Param('id') id: string): Promise<{message : string}> {
+        try {
+            await this.userService.delete(id);
+            return { message: 'Usuario borrado con exito' };
+        } catch (error) {
+            throw new Error(`Error al eliminar el usuario con ID ${id}: ${error.message}`);
+        }
+        }
+        
     }
-}

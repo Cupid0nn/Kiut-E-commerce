@@ -27,8 +27,13 @@ export class ClothesController {
     }
 
     @Delete(':id')// Proteger con Admin Y SuperAdmin
-    async delete(@Param('id') id: string): Promise<void> {
-        return this.clothesService.delete(id);
+    async delete(@Param('id') id: string): Promise<{message: string}> {
+        try {
+            await this.clothesService.delete(id);
+            return { message: 'Prenda borrada con exito' };
+        } catch (error) {
+            throw new Error(`Error al eliminar la prenda con ID ${id}: ${error.message}`);
+        }
     }
 
     @Get('name/:name')// Proteger con Admin Y SuperAdmin
