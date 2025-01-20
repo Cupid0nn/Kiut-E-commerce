@@ -2,34 +2,33 @@ import { Entity, PrimaryGeneratedColumn, Column } from 'typeorm';
 
 @Entity()
 export class Clothes {
-    @PrimaryGeneratedColumn('uuid')
-    id: string;
+  @PrimaryGeneratedColumn('uuid')
+  id: string;
 
-    @Column()
-    nombre: string;
+  @Column()
+  nombre: string;
 
-    @Column()
-    descripcion: string;
+  @Column()
+  descripcion: string;
 
-    @Column('decimal')
-    precio: number;
+  @Column('decimal')
+  precio: number;
 
-    @Column()
-    talla: string;
+  @Column()
+  talla: string;
 
-    @Column()
-    color: string;
+  @Column()
+  color: string;
 
-    @Column()
-    imagen: string;
+  @Column()
+  imagen: string;
 
-    @Column()
-    categoria: string;
+  @Column()
+  categoria: string;
 
-    @Column()
-    stock: number;
+  @Column()
+  stock: number;
 
-    @Column()
-    disponible: boolean;
-    
+  @Column()
+  disponible: boolean;
 }

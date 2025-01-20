@@ -3,6 +3,8 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 import { ConfigModule } from '@nestjs/config';
 import { UserModule } from './users/user.module';
 import { ClothesModule } from './clothes/Clothes.module';
+import { AuthModule } from './auth/auth.module';
+
 
 @Module({
   imports: [
@@ -22,7 +24,8 @@ import { ClothesModule } from './clothes/Clothes.module';
       dropSchema: true,
     }),
     UserModule,
-    ClothesModule
+    ClothesModule,
+    AuthModule,
   ],
 })
 export class AppModule {}
