@@ -3,6 +3,7 @@ POSTERIORI
 
 
 
+
 # 📖 E-commerce de Revista
 
 Este es un proyecto personal para realizar un E-commerce en forma de revista sin pasarela de pagos. La idea es que el usuario lo utilice como un catálogo y pueda acceder a las redes sociales de la empresa o comercio para comunicarse o ir al local físico. 
